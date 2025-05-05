@@ -13,10 +13,16 @@ function ListaTarefas(){
         <div>
             <h2>Lista de Tarefas</h2>
             <ul>
-                {tarefas.map(tarefa =>(
-                    <li key={tarefa.id}>{tarefa.nome}</li>
-                    
-                ))}
+            {tarefas.map(tarefa => (
+                <li key={tarefa.id}>
+                <strong>Nome:</strong> {tarefa.nome}<br />
+                <strong>Responsável:</strong> {tarefa.responsavel}<br />
+                <strong>Prazo:</strong> {tarefa.prazo}<br />
+                <strong>Prioridade:</strong> {tarefa.prioridade}<br />
+                <strong>Status:</strong> {tarefa.status}
+                <hr />
+                </li>
+            ))}
             </ul>
         </div>
     );
