@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 function ExcluirTarefa() {
     const { id } = useParams();
-    const history = useHistory();
+    const history = useNavigate();
 
     useEffect(() => {
         axios.delete(`http://localhost:8000/api/tarefa/${id}/`)

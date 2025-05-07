@@ -6,6 +6,18 @@
   height: 40vmin;
   pointer-events: none;
 }
+.header{
+  background-color: #f9f9f9;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding-left: 18px;
+}
+.h1-header{
+  margin: 0;
+  text-decoration: none;
+  color: #282c34;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

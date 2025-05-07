@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CAMPOS } from './campos';
 import axios from 'axios';
+import './form.css'
 
 function CriarTarefa() {
     const [dadosFormulario, setDadosFormulario] = useState(CAMPOS);
@@ -27,55 +28,60 @@ function CriarTarefa() {
     };
 
     return (
-        <div>
-            <h2>Criar Nova Tarefa</h2>
-            <form onSubmit={enviarFormulario}>
+        <div className="container">
+            <h2 className="titulo">Criar Nova Tarefa</h2>
+            <form className="form" onSubmit={enviarFormulario}>
                 <input
                     type="text"
                     name="nome"
                     placeholder="Nome"
                     value={dadosFormulario.nome}
                     onChange={atualizarCampo}
-                /><br />
-
+                    className="input"
+                />
+    
                 <input
                     type="text"
                     name="responsavel"
                     placeholder="Responsável"
                     value={dadosFormulario.responsavel}
                     onChange={atualizarCampo}
-                /><br />
-
+                    className="input"
+                />
+    
                 <input
                     type="datetime-local"
                     name="prazo"
                     value={dadosFormulario.prazo}
                     onChange={atualizarCampo}
-                /><br />
-
-                <label>Prioridade:</label>
+                    className="input"
+                />
+    
+                <label className="label">Prioridade:</label>
                 <select
                     name="prioridade"
                     value={dadosFormulario.prioridade}
                     onChange={atualizarCampo}
+                    className="select"
                 >
                     <option value="baixa">Baixa</option>
                     <option value="media">Média</option>
                     <option value="alta">Alta</option>
-                </select><br />
-
-                <label>Status:</label>
+                </select>
+    
+                <label className="label">Status:</label>
                 <select
                     name="status"
                     value={dadosFormulario.status}
                     onChange={atualizarCampo}
+                    className="select"
                 >
                     <option value="nao_iniciado">Não Iniciado</option>
                     <option value="em_andamento">Em Andamento</option>
                     <option value="concluido">Concluído</option>
-                </select><br />
-
-                <button type="submit">Criar Tarefa</button>
+                </select>
+    
+                <button type="submit" className="button">Criar Tarefa</button>
             </form>
         </div>
     );

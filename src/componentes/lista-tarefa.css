@@ -1,0 +1,91 @@
+.container {
+    margin: 5%;
+    padding: 1% 2%;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.h1 {
+    font-size: 26px;
+    text-align: center;
+    font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+    margin: 44px;
+    color: #333;
+}
+
+.tarefa-item {
+    background-color: #e0e0e0;
+    margin: 12px 0;
+    padding: 16px;
+    border-radius: 8px;
+    list-style: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    transition: background-color 0.3s ease;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.tarefa-item:hover {
+    background-color: #d5d5d5;
+    cursor: pointer;
+}
+.button-nova-tarefa{
+    padding: 6px;
+    height: 38px;
+    width: 180px;
+    background-color: #1f863e;
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+    right: 18px;
+}
+.button-excluir{
+    padding: 6px;
+    height: 38px;
+    width: 180px;
+    background-color: #c23939;
+    margin: 12px;
+    border: none;
+    border-radius: 5px;
+}
+.button-editar{
+    padding: 6px;
+    height: 38px;
+    width: 180px;
+    background-color: #3959c2;
+    margin: 12px;
+    border: none;
+    border-radius: 5px;
+}
+.div-button{
+    text-align: center;
+}
+.link{
+    color: #d5d5d5;
+    text-decoration: none;
+    font-size: 18px;
+}
+span{
+    margin: 6px;
+}
+.concluida {
+    background-color: #cdffcf;
+    color: #41a244;
+}
+
+.em-andamento {
+    background-color: #ffedd1;
+    color: #cf8b25;
+}
+
+.pendente {
+    background-color: #ffcdcd;
+    color: #c23939;
+}
+
+
+  
