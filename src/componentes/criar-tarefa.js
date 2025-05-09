@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { CAMPOS } from './campos';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './form.css'
 
 function CriarTarefa() {
     const [dadosFormulario, setDadosFormulario] = useState(CAMPOS);
+    const navigate = useNavigate()
 
     const atualizarCampo = (evento) => {
         const { name, value } = evento.target;
@@ -20,6 +22,7 @@ function CriarTarefa() {
             .then(() => {
                 alert('Tarefa criada com sucesso!');
                 setDadosFormulario(CAMPOS);
+                navigate('/');
             })
             .catch(erro => {
                 console.error("Erro ao criar tarefa:", erro);
@@ -31,6 +34,7 @@ function CriarTarefa() {
         <div className="container">
             <h2 className="titulo">Criar Nova Tarefa</h2>
             <form className="form" onSubmit={enviarFormulario}>
+                <label className="label">Nome:</label>
                 <input
                     type="text"
                     name="nome"
@@ -39,7 +43,7 @@ function CriarTarefa() {
                     onChange={atualizarCampo}
                     className="input"
                 />
-    
+                <label className="label">Responsável pela tarefa:</label>
                 <input
                     type="text"
                     name="responsavel"
@@ -48,7 +52,7 @@ function CriarTarefa() {
                     onChange={atualizarCampo}
                     className="input"
                 />
-    
+                <label className="label">Prazo:</label>
                 <input
                     type="datetime-local"
                     name="prazo"
@@ -80,6 +84,16 @@ function CriarTarefa() {
                     <option value="em_andamento">Em Andamento</option>
                     <option value="concluido">Concluído</option>
                 </select>
+
+                <label className="label">Observação:</label>
+                <input
+                    type="text"
+                    name="observacao"
+                    placeholder="Observação"
+                    value={dadosFormulario.observacao}
+                    onChange={atualizarCampo}
+                    className="input"
+                />
     
                 <button type="submit" className="button">Criar Tarefa</button>
             </form>

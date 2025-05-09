@@ -4,19 +4,18 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 function ExcluirTarefa() {
     const { id } = useParams();
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     useEffect(() => {
         axios.delete(`http://localhost:8000/api/tarefa/${id}/`)
             .then(() => {
                 alert("Tarefa excluída com sucesso!");
-                history.push('/tarefas');
+                navigate('/');
             })
             .catch(erro => {
                 console.error("Erro ao excluir tarefa:", erro);
-                alert("Erro ao excluir tarefa.");
             });
-    }, [id, history]);
+    }, [id, navigate]);
 
     return <p>Excluindo tarefa...</p>;
 }

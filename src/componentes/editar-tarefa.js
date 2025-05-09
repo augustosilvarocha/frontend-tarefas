@@ -6,7 +6,7 @@ import './form.css'
 
 function EditarTarefa() {
     const { id } = useParams();
-    const history = useNavigate();
+    const navigate = useNavigate();
     const [dadosFormulario, setDadosFormulario] = useState(CAMPOS);
 
     useEffect(() => {
@@ -16,7 +16,6 @@ function EditarTarefa() {
             })
             .catch(erro => {
                 console.error("Erro ao carregar tarefa:", erro);
-                alert('Erro ao carregar dados para edição.');
             });
     }, [id]);
 
@@ -33,7 +32,7 @@ function EditarTarefa() {
         axios.put(`http://localhost:8000/api/tarefa/${id}/`, dadosFormulario)
             .then(() => {
                 alert('Tarefa editada com sucesso!');
-                history.push('/tarefas');
+                navigate('/');
             })
             .catch(erro => {
                 console.error("Erro ao editar tarefa:", erro);
